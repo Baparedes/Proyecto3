@@ -6,25 +6,27 @@ html {
 }
 .layout {
     display: grid;
-    grid-template-rows: 10% 3fr 2fr 1fr;
+    grid-template-rows: 80px minmax(220px,100%) 2fr 150px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .header {
+    display: grid;
+    grid-template-columns: 1.5fr 4fr 1fr;
     background-color: #00413b;
     color: white;
-    display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
 }
 .logo img {
     display: flex;
     width: 9rem;
+    height: auto;
 }
 .logo img:hover {
-    width: 9.1rem;
+    opacity: 0.8;
 }
 .header .nav {
     display: flex;
-    justify-content: flex-start wrap;
+    justify-content: flex-start;
+    align-items: center;
     gap: 1rem;
     padding-left: 1rem;
 }
@@ -36,8 +38,8 @@ html {
     display: flex;
     justify-content: flex-end;
     align-self: center;
-    margin-right: 1rem;
-    margin-left: 0.5rem;
+    margin-right: 2rem;
+    margin-left: 1rem;
 }
 .header a {
     text-decoration: none;
@@ -47,6 +49,12 @@ html {
 .header a:hover {
     color: #bbf5aa;
 }
+.main img {
+    width: 100vw;
+    height: 100%;
+    min-width: 600px;
+    min-height: auto;
+}
 .main {
     display: grid;
     background-color: white;
@@ -55,6 +63,11 @@ html {
 .main .products {
     background-color: rgba(255, 255, 255, 0);
     position: absolute;
+    margin-left: 1.4rem;
+    margin-top: 5%;
+}
+.main .products:hover {
+    transform: scale(1.03);
 }
 .main div a {
     text-decoration: none;
@@ -63,14 +76,13 @@ html {
 .main div .newproducts {
     background-color: #002320;
     border-radius: 0.6rem;
-    margin: 1.4rem;
     padding: 0.3rem;
 }
 .main .email {
-    display: flex;
+    display: grid;
     position: absolute;
-    align-self: center;
-    margin: 1.4rem;
+    margin-left: 1.4rem;
+    margin-top: 14%;
 }
 .main .email p {
     background-color: #00120777;
@@ -101,13 +113,46 @@ html {
     background-color: #00413b;
     box-shadow: 0 2px 8px #000000;
 }
-.main img {
-    width: 100%;
-    height: 100%;
-}
 .catalog {
-    background-color: yellow;
+    background-color: white;
+}
+.catalog .title1 {
+    display: flex;
+    justify-content: center;
+    padding-top: 1.1rem;
+    padding-bottom: 1.5rem;
+}
+.catalog .furniture {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 2rem;
+    margin-left: 2.8rem;
+    margin-right: 2.8rem;
+}
+.catalog .item {
+    width: 60%;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px #000000;
+}
+.catalog .item:hover {
+    box-shadow: 4px 4px 8px #000000;
+    transform: scale(1.05);
 }
 .footer {
-    background-color: tomato;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 30px 1fr 30px;
+    background-color: white;
+}
+.footer .redes {
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+.footer .logos:hover {
+    transform: scale(1.1);
 }
