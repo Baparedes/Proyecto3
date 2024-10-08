@@ -137,15 +137,48 @@ html {
     margin-left: 2.8rem;
     margin-right: 2.8rem;
 }
-.catalog .item {
-    width: 60%;
+.catalog .product {
+    position: relative;
+}
+.catalog .product img {
+    width: 100%;
+    display: block;
     border-radius: 5px;
     box-shadow: 1px 1px 4px #000000;
 }
-.catalog .item:hover {
+.catalog .product img:hover {
     box-shadow: 4px 4px 8px #000000;
     transform: scale(1.05);
-    cursor: pointer;
+}
+.description {
+    position: absolute;
+    bottom: -2%;
+    left: 0;
+    right: 0;
+    background-color: rgba(32, 32, 32, 0.854);
+    color: white;
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+    text-align: center;
+    opacity: 0;
+}
+.description p {
+    font-size: 0.7rem;
+}
+.description a {
+    text-decoration: none;
+    color: #00a277;
+    font-size: 0.7rem;
+}
+.description a:hover {
+    color: #1ed1a1;
+    font-weight: bold;
+    text-shadow: 0 2px 8px #000000;
+}
+.product:hover .description {
+    opacity: 1;
+    transform: scale(1.05);
 }
 .footer .redes {
     display: flex;
