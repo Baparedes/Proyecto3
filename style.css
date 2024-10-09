@@ -230,3 +230,25 @@ html {
     margin-top: 2rem;
     padding: 0.5rem;
 }
+@media screen and (min-width: 768px) {
+    .main .email {
+        width: 45%;
+        height: 32%;
+    }
+    .main .email p {
+        font-size: 0.9rem;
+        padding: 0.9rem;
+    }
+    .main .email input {
+        width: 18.5rem;
+        font-size: 1.35rem;
+        margin-top: 1rem;
+    }
+    .main .email button {
+        width: 6rem;
+        height: 2.3rem;
+        position: fixed;
+        top: 17rem;
+        left: 22rem;
+    }
+}
