@@ -6,7 +6,9 @@ html {
 }
 .layout {
     display: grid;
-    grid-template-rows: 80px minmax(220px,100%) 2fr 350px;
+    grid-template-columns: 100%;
+    grid-template-rows: min-content minmax(1fr,max-content) 1.3fr 350px;
+    grid-auto-flow:dense;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .header {
@@ -38,22 +40,25 @@ html {
     display: flex;
     justify-content: flex-end;
     align-self: center;
-    margin-right: 2rem;
+    margin-right: 2.5rem;
     margin-left: 1rem;
+}
+.header .sesion a {
+    font-weight: bold;
 }
 .header a {
     text-decoration: none;
     color: white;
-    font-size: 0.8rem;
+    font-size: 0.76rem;
 }
 .header a:hover {
     transform: scale(1.05);
     text-shadow: 0 2px 8px #000000;
 }
 .main img {
-    width: 100vw;
+    width: 100%;
     height: 100%;
-    min-width: 600px;
+    /* min-width: 600px; */
     min-height: auto;
 }
 .main {
@@ -67,7 +72,7 @@ html {
     border: none;
     border-radius: 0.6rem;
     margin-left: 1.4rem;
-    margin-top: 5%;
+    margin-top: 8%;
 }
 .main .products:hover {
     transform: scale(1.03);
@@ -89,22 +94,25 @@ html {
     margin-top: 14%;
 }
 .main .email p {
-    background-color: #00120777;
+    background-color: #001207b9;
     border-radius: 0.8rem;
     color: white;
-    font-size: 0.7rem;
-    padding: 0.5rem;
+    font-size: 70%;
+    padding: 0.7rem;
     padding-bottom: 1rem;
+    width: 100%;
 }
 .main .email input {
-    margin-top: 0.4rem;
+    margin-top: 0.7rem;
+    margin-left: 0.1rem;
     border-radius: 0.4rem;
     padding: 0.2rem;
-    width: 16rem;
+    width: 75%;
     font-size: 1rem;
 }
 .main .email button {
-    margin-left: 0.7rem;
+    width: 17%;
+    margin-left: 0.8rem;
     background-color: #023129;
     border: none;
     border-radius: 0.4rem;
@@ -132,17 +140,17 @@ html {
     grid-template-rows: repeat(2,1fr);
     justify-items: center;
     align-items: center;
-    gap: 25px;
+    gap: 1.5rem;
     margin-bottom: 2rem;
-    margin-left: 2.8rem;
-    margin-right: 2.8rem;
+    /* margin-left: 2.8rem; */
+    /* margin-right: 2.8rem; */
 }
 .catalog .product {
     position: relative;
 }
 .catalog .product img {
-    width: 100%;
-    display: block;
+    width: fit-content;
+    display: flex;
     border-radius: 5px;
     box-shadow: 1px 1px 4px #000000;
 }
@@ -192,11 +200,12 @@ html {
 .footer .logos:hover {
     transform: scale(1.1);
     opacity: 0.8;
+    cursor: pointer;
 }
 .footer .pie {
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    justify-content:space-around;
+    justify-items: center;
     background-color: white;
 }
 .footer .column h3 {
@@ -230,25 +239,112 @@ html {
     margin-top: 2rem;
     padding: 0.5rem;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
+    .header {
+        min-height: 70px;
+    }
+    .main img {
+        height: auto;
+        min-height: fit-content;
+    }
     .main .email {
-        width: 45%;
-        height: 32%;
+        width: 50%;
+        min-width: max-content;
+        max-width: max-content;
+        height: 25%;
+        top: 1rem;
     }
     .main .email p {
-        font-size: 0.9rem;
+        font-size: 80%;
         padding: 0.9rem;
     }
     .main .email input {
-        width: 18.5rem;
-        font-size: 1.35rem;
-        margin-top: 1rem;
+        width: 19rem;
+        margin-top: 0.8rem;
     }
     .main .email button {
-        width: 6rem;
-        height: 2.3rem;
-        position: fixed;
-        top: 17rem;
-        left: 22rem;
+        width: 15%;
+        margin-left: 4%;
     }
+    .catalog .furniture {
+        display: grid;
+        grid-auto-flow: row;
+    }
+    .catalog .product img {
+        width: 14rem;
+    }
+}
+@media screen and (max-width: 960px) {
+    .layout {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 3rem min-content 1fr 18rem;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .logo img {
+        display: flex;
+        width: 100%;
+    }    
+    .header a {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 60%;
+    }    
+    .main .newproducts {
+        font-size: 0.8rem;
+    }
+    .main .email p {
+        font-size: 0.65rem;
+    }
+    .main .email input {
+        width: 70%;
+        font-size: 0.75rem;
+    }
+    .main .email button {
+        width: 4rem;
+        margin-left: 1rem;
+    }
+    .catalog .furniture {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .catalog .product img {
+        width: 15rem;
+    }
+}
+@media screen and (max-width: 700px) {
+    .catalog .furniture {
+        display: flex;
+        flex-direction: column;
+    }   
+}
+@media screen and (max-width: 574px) {
+    .footer .pie {
+        display: grid;
+        grid-template-columns: 5.8rem 6.3rem 6.3rem 6.2rem;
+    }
+}
+@media screen and (max-width: 500px) {
+    .layout {
+        display: grid;
+        grid-template-columns: 100vw;
+        grid-template-rows: 2.5rem min-content 1fr 18rem;
+    } 
+    .main .products {
+        margin-top: 3%;
+    }
+    .main .products p {
+        font-size: small;
+    }
+    .main .email {
+        margin-top: 10%;
+        height: min-content;
+    }
+    .main .email p {
+        font-size: 0.6rem;
+    }
+    .main .email input {
+        font-size: 0.7rem;
+        margin-top: 0.4rem;
+    };
 }
