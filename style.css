@@ -7,19 +7,19 @@ html {
 .layout {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: min-content minmax(1fr,max-content) 1.3fr 350px;
-    grid-auto-flow:dense;
+    grid-template-rows: 1fr minmax(1fr,max-content) 1.3fr 15%;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .header {
     display: grid;
     grid-template-columns: 1.5fr 4fr 1fr;
     background-color: #00413b;
+    padding: 1%;
     color: white;
 }
 .logo img {
     display: flex;
-    width: 9rem;
+    width: 80%;
     height: auto;
 }
 .logo img:hover {
@@ -38,7 +38,6 @@ html {
 }
 .header .sesion {
     display: flex;
-    justify-content: flex-end;
     align-self: center;
     margin-right: 2.5rem;
     margin-left: 1rem;
@@ -58,7 +57,6 @@ html {
 .main img {
     width: 100%;
     height: 100%;
-    /* min-width: 600px; */
     min-height: auto;
 }
 .main {
@@ -71,7 +69,7 @@ html {
     position: absolute;
     border: none;
     border-radius: 0.6rem;
-    margin-left: 1.4rem;
+    margin-left: 3%;
     margin-top: 8%;
 }
 .main .products:hover {
@@ -90,7 +88,7 @@ html {
 .main .email {
     display: grid;
     position: absolute;
-    margin-left: 1.4rem;
+    margin-left: 3%;
     margin-top: 14%;
 }
 .main .email p {
@@ -103,20 +101,19 @@ html {
     width: 100%;
 }
 .main .email input {
-    margin-top: 0.7rem;
-    margin-left: 0.1rem;
+    margin-top: 2.5%;
+    margin-left: 0.8%;
     border-radius: 0.4rem;
-    padding: 0.2rem;
+    padding: 1%;
     width: 75%;
     font-size: 1rem;
 }
 .main .email button {
     width: 17%;
-    margin-left: 0.8rem;
     background-color: #023129;
     border: none;
     border-radius: 0.4rem;
-    padding: 0.5rem;
+    padding: 2.5%;
     color: white;
     font-weight: bold;
     cursor: pointer;
@@ -131,8 +128,8 @@ html {
 .catalog .title1 {
     display: flex;
     justify-content: center;
-    padding-top: 1.1rem;
-    padding-bottom: 1.5rem;
+    padding-top: 4%;
+    padding-bottom: 5%;
 }
 .catalog .furniture {
     display: grid;
@@ -141,15 +138,12 @@ html {
     justify-items: center;
     align-items: center;
     gap: 1.5rem;
-    margin-bottom: 2rem;
-    /* margin-left: 2.8rem; */
-    /* margin-right: 2.8rem; */
+    margin-bottom: 4.5%;
 }
 .catalog .product {
     position: relative;
 }
 .catalog .product img {
-    width: fit-content;
     display: flex;
     border-radius: 5px;
     box-shadow: 1px 1px 4px #000000;
@@ -192,9 +186,9 @@ html {
     display: flex;
     justify-content:flex-start;
     align-items: center;
-    margin-left: 2rem;
-    gap: 1rem;
-    padding: 1%;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    gap: 5%;
     opacity: 0.8;
 }
 .footer .logos:hover {
@@ -205,20 +199,19 @@ html {
 .footer .pie {
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    justify-items: center;
+    justify-items: start;
     background-color: white;
 }
-.footer .column h3 {
-    display: flex;
-    padding: 1rem;
-    margin-top: 1rem;
+.footer ul h3 {
+    font-size: 80%;
     color: #00413b84;
-    font-size: small;
-    font-weight: bolder;
 }
 .footer .column li {
     list-style: none;
-    padding: 0.3rem;
+    padding: 4%;
+}
+.footer .column li:hover {
+    transform: scale(1.1);
 }
 .footer .column a {
     text-decoration: none;
@@ -227,7 +220,7 @@ html {
 }
 .footer .column a:hover {
     color: #00413bbd;
-    font-weight: bolder;
+    text-shadow: 0 2px 3px #003025ad;
 }
 .footer .rights {
     display: flex;
@@ -240,9 +233,6 @@ html {
     padding: 0.5rem;
 }
 @media screen and (min-width: 960px) {
-    .header {
-        min-height: 70px;
-    }
     .main img {
         height: auto;
         min-height: fit-content;
@@ -275,16 +265,6 @@ html {
     }
 }
 @media screen and (max-width: 960px) {
-    .layout {
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: 3rem min-content 1fr 18rem;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    }
-    .logo img {
-        display: flex;
-        width: 100%;
-    }    
     .header a {
         display: flex;
         flex-wrap: wrap;
@@ -318,18 +298,7 @@ html {
         flex-direction: column;
     }   
 }
-@media screen and (max-width: 574px) {
-    .footer .pie {
-        display: grid;
-        grid-template-columns: 5.8rem 6.3rem 6.3rem 6.2rem;
-    }
-}
 @media screen and (max-width: 500px) {
-    .layout {
-        display: grid;
-        grid-template-columns: 100vw;
-        grid-template-rows: 2.5rem min-content 1fr 18rem;
-    } 
     .main .products {
         margin-top: 3%;
     }
@@ -338,7 +307,8 @@ html {
     }
     .main .email {
         margin-top: 10%;
-        height: min-content;
+        min-width: 20rem;
+        height: max-content;
     }
     .main .email p {
         font-size: 0.6rem;
